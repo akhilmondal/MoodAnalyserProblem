@@ -12,20 +12,26 @@ public class MoodAnalyserProblem {
     public MoodAnalyserProblem(String message) {
         this.message = message;
     }
-    //this method will analyse the message and give true or false as output of mood.
+    /*this method will analyse the message and give true or false as output of mood.
+    -I used try catch block to get the exception if user enter 'null' as message.
+     */
     public boolean analyseMood() {
         boolean result = false;
-        String[] words = message.split(" ");
-        for (int i =0; i < words.length; i++) {
-            if (words[i].equals("sad")) {
-                result = true;
-                break;
+        try{
+            String[] words = message.split(" ");
+            for (int i =0; i < words.length; i++) {
+                if (words[i].equals("sad")) {
+                    result = true;
+                    break;
+                }
             }
-        }
-        if (result) {
-            System.out.println("you are in Sad mood: ");
-        }else {
-            System.out.println("you are in happy mood: ");
+            if (result) {
+                System.out.println("you are in Sad mood: ");
+            }else {
+                System.out.println("you are in happy mood: ");
+            }
+        } catch (NullPointerException e) {
+            System.out.println("The Exception is : " +e.getMessage());
         }
         return result;
     }
@@ -34,5 +40,7 @@ public class MoodAnalyserProblem {
         System.out.println("Welcome to mood analyser problem: ");
         MoodAnalyserProblem moodAnalyserProblem = new MoodAnalyserProblem("i am in sad mood");
         moodAnalyserProblem.analyseMood();
+        MoodAnalyserProblem moodAnalyserProblem1 = new MoodAnalyserProblem(null); //Here i am creating the object with null value which will throw an exception.
+        moodAnalyserProblem1.analyseMood();
     }
 }

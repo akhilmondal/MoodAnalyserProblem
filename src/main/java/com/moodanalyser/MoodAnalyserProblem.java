@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class MoodAnalyserProblem {
 
-    //
+    //this method will analyse the message and give true or false as output of mood.
     public boolean analyseMood(String message) {
         boolean result = false;
         String[] words = message.split(" ");

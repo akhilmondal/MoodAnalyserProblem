@@ -8,13 +8,13 @@ public class MoodAnalyserTest {
 
     @Test
     public void AnalyseMoodMethodWillReturnSad() {
-        MoodAnalyserProblem moodAnalyserProblem = new MoodAnalyserProblem();
-        Assert.assertEquals(true,moodAnalyserProblem.analyseMood("i am in sad mood"));
+        MoodAnalyserProblem moodAnalyserProblem1 = new MoodAnalyserProblem("i am in sad mood");
+        Assert.assertEquals(true,moodAnalyserProblem1.analyseMood());
     }
     //bellow test case will pass when result will be fasle or not sad.
     @Test
     public void AnalyseMoodMethodWillReturnHappy() {
-        MoodAnalyserProblem moodAnalyserProblem = new MoodAnalyserProblem();
-        Assert.assertEquals(false,moodAnalyserProblem.analyseMood("i am in any mood"));
+        MoodAnalyserProblem moodAnalyserProblem2 = new MoodAnalyserProblem("i am in any mood");
+        Assert.assertEquals(false,moodAnalyserProblem2.analyseMood());
     }
 }

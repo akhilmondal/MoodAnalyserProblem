@@ -1,11 +1,19 @@
 package com.moodanalyser;
 
-import java.util.ArrayList;
+import java.security.PrivateKey;
 
 public class MoodAnalyserProblem {
 
+    private String message;
+    //Default constructor
+    public MoodAnalyserProblem() {
+    }
+    //Parameterized constructor
+    public MoodAnalyserProblem(String message) {
+        this.message = message;
+    }
     //this method will analyse the message and give true or false as output of mood.
-    public boolean analyseMood(String message) {
+    public boolean analyseMood() {
         boolean result = false;
         String[] words = message.split(" ");
         for (int i =0; i < words.length; i++) {
@@ -24,7 +32,7 @@ public class MoodAnalyserProblem {
 
     public static void main(String[] args) {
         System.out.println("Welcome to mood analyser problem: ");
-        MoodAnalyserProblem moodAnalyserProblem =new MoodAnalyserProblem();
-        moodAnalyserProblem.analyseMood("i am so sad");
+        MoodAnalyserProblem moodAnalyserProblem = new MoodAnalyserProblem("i am in sad mood");
+        moodAnalyserProblem.analyseMood();
     }
 }
